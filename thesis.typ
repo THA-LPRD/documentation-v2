@@ -36,6 +36,7 @@
 #include "content/webapp-mcu.typ"
 #include "content/webapp-server.typ"
 #include "content/gehaeuse.typ"
+#include "content/prototypen.typ"
 #pagebreak()
 #include "content/bedienung.typ"
 #pagebreak()
