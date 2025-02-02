@@ -45,7 +45,7 @@ jobs:
 
       - name: Compile documents
         run: |
-          typst compile thesis.typ thesis.pdf
+          typst compile thesis.typ Dokumentation.pdf
 
       - name: Create Release
         id: create_release
