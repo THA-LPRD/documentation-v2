@@ -1,17 +1,38 @@
 == Firmware
+_Ahmet Emirhan Göktaş_
 
-Die erste Implementierung unseres Firmware basierte auf PlatformIO mit dem Arduino-Framework, was für die Prototypphase ausreichend war. Mit wachsendem Projektumfang wurden jedoch mehrere Einschränkungen deutlich, die eine grundlegende Überarbeitung der Architektur erforderten. Ein wesentliches Problem war die begrenzte Arduino-Stack-Größe, die für unsere erweiterten Anforderungen nicht ausreichte und zu Workarounds führte, die die Codebasis unnötig verkomplizierten. Die eingeschränkte Kontrolle über Systemressourcen und Initialisierungsprozesse erschwerte zudem die Implementierung neuer Funktionen und die Wartung der Codequalität.
+Die erste Implementierung unseres Firmware basierte auf PlatformIO mit dem Arduino-Framework, was für die Prototypphase ausreichend war. Mit der Erweiterung des Projektumfangs traten jedoch mehrere kritische Einschränkungen auf, die eine Migration zum ESP-IDF-Framework erforderlich machten.
 
-Sicherheitsaspekte waren ein weiterer entscheidender Faktor für den Wechsel des Frameworks. Die WiFi-Implementierung von Arduino zeigte problematisches Verhalten, beispielsweise durch unbeabsichtigtes Starten im ungesicherten AP-Modus. Diese Sicherheitslücken ließen sich innerhalb der Arduino-Grenzen nicht angemessen beheben. Zusätzlich traten Stabilitätsprobleme auf, bei denen das System nach kurzer Betriebszeit nicht mehr reagierte und neu gestartet werden musste. Die Abstraktionsschicht von Arduino erschwerte die Analyse dieser Probleme erheblich.
+Die folgenden Abschnitte beschreiben die wichtigsten architektonischen Änderungen und Verbesserungen, die während dieser Migration umgesetzt wurden.
 
-Die Migration zu ESP-IDF wurde bis auf eine verbleibende Arduino-Bibliothek vollständig durchgeführt. Diese Umstellung ermöglicht uns nun präzise Kontrolle über Systeminitialisierung, Ressourcenverwaltung und Task-Management. Gleichzeitig verbessert die höhere Systemtransparenz unsere Debugging-Möglichkeiten. Diese Anpassungen haben die früheren Stabilitäts- und Sicherheitsprobleme effektiv behoben.
+=== Systemkontrolle und Ressourcenverwaltung
+_Ahmet Emirhan Göktaş_
 
-Das neue Logging-System stellt eine wesentliche Verbesserung dar. Statt einer Eigenentwicklung nutzen wir jetzt spdlog, eine etablierte Logging-Bibliothek für größere Projekte. Diese bietet Funktionen wie rotierendes Logging, Thread-Sicherheit und anpassbare Log-Ziele. Einige Features wie HTTP-basierte Live-Logs sind für spätere Implementierung vorgesehen, wobei die technische Basis bereits geschaffen wurde.
+Das Arduino-Framework zeigte erhebliche Einschränkungen, darunter eine unzureichende Stack-Größe für unsere wachsenden Anforderungen, die verschiedene Workarounds erforderlich machte und unnötige Komplexität in der Codebasis verursachte. Die Migration zu ESP-IDF ermöglicht nun eine präzise Kontrolle über Systeminitialisierung, Ressourcenzuweisung und Task-Management. Mit nur noch einer verbleibenden Arduino-abhängigen Bibliothek hat dieser Übergang durch bessere Systemtransparenz unsere Debugging-Möglichkeiten deutlich verbessert.
 
-Das WiFi-Management wurde komplett überarbeitet und verfügt nun über einen dedizierten Management-Task für Verbindungshandling mit Retry-Mechanismus. Das System führt im Station-Modus automatisch NTP-Synchronisation durch und ermöglicht vollständige Kontrolle über AP/Station-Übergänge. Dies behebt die früheren Sicherheitslücken und erhöht die Zuverlässigkeit der Netzwerkkommunikation.
+=== Sicherheit und Stabilität
+_Ahmet Emirhan Göktaş_
 
-Die Konfigurationsverwaltung wurde auf ein JSON-basiertes System umgestellt. Standard-Konfigurationen werden zur Kompilierzeit eingebettet, Laufzeit-Änderungen im Flash-Speicher gesichert. Dies verbessert die Wartbarkeit und Lesbarkeit des Konfigurationscodes deutlich.
+Die WiFi-Implementierung des Arduino-Frameworks wies bedenkliche Sicherheitslücken auf, wie beispielsweise das unerwartete Öffnen im ungeschützten AP-Modus. Zusätzlich führten Stabilitätsprobleme dazu, dass das System nach kurzer Betriebszeit nicht mehr reagierte und Neustarts erforderlich waren. Die Ursachenanalyse dieser Probleme wurde durch Arduinos Abstraktionsschicht erheblich erschwert. Die Migration zu ESP-IDF hat diese Sicherheits- und Stabilitätsprobleme direkt adressiert.
 
-Der Display-Treiber profitiert vom Wechsel von pngdec zu libspng. Der ursprüngliche Decoder erforderte umfangreiche Makros und spezielle Include-Behandlung. Die libspng-Implementierung optimiert die Speichernutzung und vermeidet überflüssige Farbraum-Konvertierungen. Die direkte Umwandlung in passende Farbräume steigert die Präzision der Palette-Konvertierung.
+=== Logging-System
+_Ahmet Emirhan Göktaş_
 
-Die architektonischen Verbesserungen schaffen ein besser wartbares und testbares Gesamtsystem. Reduzierte globale Zustandsabhängigkeiten und verbesserte Komponentenisolierung erleichtern Debugging und Feature-Implementierung. Diese Optimierungen bilden zusammen mit dem erweiterten Logging eine solide Basis für die weitere Entwicklung. Durch diese Überarbeitung hat sich das Projekt von einem Prototyp zu einem produktionsreifen System mit verbesserter Stabilität, Sicherheit und Zuverlässigkeit entwickelt.
+Wir haben spdlog integriert, eine robuste Logging-Bibliothek, die in großen Projekten weit verbreitet ist, und damit unsere bisherige eigene Logging-Lösung ersetzt. Diese Integration bietet erweiterte Funktionen wie rotierende Dateiunterstützung und Thread-Sicherheit. Während einige Funktionen, wie HTTP-übertragene Live-Logs, noch auf ihre Implementierung warten, ist das Framework nun darauf vorbereitet, diese Fähigkeiten ohne größere architektonische Änderungen zu ergänzen.
+
+=== WiFi-Management
+_Ahmet Emirhan Göktaş_
+
+Das WiFi-Management-System wurde vollständig neu gestaltet und verfügt nun über einen speziellen Management-Task, der Verbindungen mit mehreren Wiederholungsversuchen verwaltet. Das neue System initiiert automatisch die NTP-Synchronisation im Station-Modus und bietet vollständige Kontrolle über AP/Station-Modus-Übergänge. Diese Verbesserungen haben frühere Sicherheitslücken beseitigt und gleichzeitig die Gesamtzuverlässigkeit der Netzwerkkommunikation erhöht.
+
+=== Konfigurationssystem
+_Ahmet Emirhan Göktaş_
+
+Das Konfigurationssystem wurde grundlegend überarbeitet und der bisherige komplexe Verwaltungsmechanismus durch ein JSON-basiertes System ersetzt. Standardkonfigurationen werden nun zur Kompilierungszeit eingebettet, während Laufzeitänderungen im Flash-Speicher gespeichert werden. Diese Änderung hat sowohl die Wartbarkeit als auch die Lesbarkeit unseres Konfigurationscodes deutlich verbessert und macht ihn zugänglicher für zukünftige Modifikationen und Debugging.
+
+=== Display-Treiber-Optimierung
+_Ahmet Emirhan Göktaş_
+
+Der Display-Treiber wurde von pngdec auf libspng aktualisiert, wodurch mehrere Einschränkungen der vorherigen Implementierung behoben wurden. Der ursprüngliche Decoder basierte stark auf Makros und erforderte eine sorgfältige Behandlung von Include-Dateien, wobei sogar Patches für grundlegende Funktionalität notwendig waren. Die neue Implementierung mit libspng hat redundante Farbraumkonversionen eliminiert und die Speichereffizienz durch die Entfernung unnötiger RGB565-Zwischenkonvertierungsschritte verbessert, was potenziell die Genauigkeit unseres Palette-Konvertierungsprozesses steigert.
+
+Diese umfassenden architektonischen Verbesserungen haben unser Projekt von einer Implementierung auf Prototypen-Niveau zu einem produktionsreifen System transformiert. Die Reduzierung von globalen Zustandsabhängigkeiten und die verbesserte Komponentenisolierung haben unsere Fähigkeit zur Fehlersuche und Implementierung neuer Funktionen gesteigert. In Kombination mit unseren erweiterten Logging-Fähigkeiten bieten diese Änderungen eine solide Grundlage für die kontinuierliche Entwicklung und Wartung, die verbesserte Stabilität, Sicherheit und Zuverlässigkeit gewährleistet.

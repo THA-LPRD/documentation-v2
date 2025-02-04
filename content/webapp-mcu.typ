@@ -1,9 +1,38 @@
 == Webanwendung auf MCU
+_Ahmet Emirhan Göktaş_
 
-Die Weboberfläche, die als Konfigurationsportal des Geräts dient, wurde grundlegend überarbeitet. Die vorherige Implementierung bestand aus einfachen HTML- und JavaScript-Dateien, die direkt vom Gerät bereitgestellt wurden und zu einer rudimentären, schwer navigierbaren Benutzeroberfläche führten. In Anerkennung der Bedeutung der Benutzerfreundlichkeit bei modernen Geräten haben wir diese Schnittstelle mit Next.js als Framework neu konzipiert.
+Die Weboberfläche, die als Konfigurationsportal des Geräts dient, wurde umfassend modernisiert. Dieser Abschnitt beschreibt die Verbesserungen unserer neuen Next.js-basierten Implementierung.
 
-Diese Migration zu Next.js ermöglicht ein fortschrittlicheres und benutzerfreundlicheres Interface-Design. Die Einstellungsseite verfügt nun über eine logische Kategorisierung der Optionen, was die Navigation für Benutzer intuitiver gestaltet. Wir haben eine umfassende clientseitige Eingabevalidierung implementiert, die nicht nur durch sofortiges Feedback die Benutzererfahrung verbessert, sondern auch die Verarbeitungslast des ESP32 reduziert, da eine aufwendige serverseitige Validierung entfällt.
+=== Einschränkungen der vorherigen Implementierung
+_Ahmet Emirhan Göktaş_
 
-Die neue Oberfläche bietet ein reaktionsschnelleres und professionelleres Erlebnis, das besser mit aktuellen Webstandards harmoniert. Während bestimmte Funktionen wie das Gerätestatistik-Dashboard und die Live-Log-Ansicht noch in Entwicklung sind, bietet das Next.js-Framework eine solide Grundlage für diese kommenden Erweiterungen. Die modulare Struktur der neuen Architektur vereinfacht die Implementierung neuer Funktionen und die Wartung bestehender Funktionalität erheblich.
+Die ursprüngliche Weboberfläche bestand aus einfachen HTML- und JavaScript-Dateien. Dies führte zu einer rudimentären und schwer navigierbaren Benutzererfahrung, die weder modernen Webstandards noch den Benutzererwartungen entsprach.
 
-Diese Modernisierung der Weboberfläche stellt eine deutliche Verbesserung der Benutzerinteraktion mit unserem Gerät dar. Die verbesserte Benutzerfreundlichkeit und das professionelle Erscheinungsbild schaffen einen überzeugenden ersten Eindruck, während die optimierte Architektur sicherstellt, dass wir die Schnittstelle kontinuierlich weiterentwickeln können. Obwohl einige geplante Funktionen noch in Entwicklung sind, zeigt die aktuelle Implementierung bereits erhebliche Verbesserungen in Benutzerfreundlichkeit und Wartbarkeit im Vergleich zur ursprünglichen Version.
+=== Framework-Migration
+_Ahmet Emirhan Göktaş_
+
+Wir haben Next.js als Framework für die neue Implementierung gewählt. Diese Migration ermöglicht die Entwicklung einer fortschrittlicheren und professionelleren Benutzeroberfläche und bietet gleichzeitig eine solide Grundlage für zukünftige Erweiterungen, einschließlich geplanter Funktionen wie einem Gerätestatistik-Dashboard und einer Live-Log-Ansicht.
+
+=== Verbesserungen der Benutzeroberfläche
+_Ahmet Emirhan Göktaş_
+
+Die neu gestaltete Oberfläche verfügt über eine logische Kategorisierung der Einstellungen und Optionen, wodurch die Navigation für Benutzer intuitiver wird. Das professionelle Erscheinungsbild und die verbesserte Reaktionsfähigkeit entsprechen besser den zeitgemäßen Webstandards und schaffen einen überzeugenden ersten Eindruck bei der Interaktion mit unserem Gerät. Diese Verbesserungen werden zusammen mit der geplanten Ergänzung des Statistik-Dashboards und der Log-Ansicht den Benutzern eine umfassende und intuitive Steuerungsoberfläche bieten.
+
+=== Eingabevalidierung
+_Ahmet Emirhan Göktaş_
+
+Wir haben eine umfassende clientseitige Eingabevalidierung implementiert, die zwei wesentliche Vorteile bietet:
+
+- Sofortiges Feedback an die Benutzer, was die Gesamtbenutzererfahrung verbessert
+- Reduzierte Verarbeitungslast auf dem ESP32 durch Minimierung der serverseitigen Validierung
+
+=== Architekturvorteile
+_Ahmet Emirhan Göktaş_
+
+Die modulare Struktur der Next.js-basierten Architektur bietet mehrere Vorteile:
+
+- Vereinfachte Implementierung neuer Funktionen
+- Verbesserte Wartung bestehender Funktionalität
+- Solide Grundlage für zukünftige Erweiterungen
+
+Die Modernisierung unserer Weboberfläche stellt einen bedeutenden Fortschritt in der Benutzerinteraktion mit dem Gerät dar, mit einer verbesserten Architektur, die eine kontinuierliche Weiterentwicklung zur Erfüllung zukünftiger Anforderungen gewährleistet und dabei hohe Standards für Benutzerfreundlichkeit und Wartbarkeit aufrechterhält.
