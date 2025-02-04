@@ -1,1 +1,9 @@
-== Webapplication auf MCU
+== Webanwendung auf MCU
+
+Die Weboberfläche, die als Konfigurationsportal des Geräts dient, wurde grundlegend überarbeitet. Die vorherige Implementierung bestand aus einfachen HTML- und JavaScript-Dateien, die direkt vom Gerät bereitgestellt wurden und zu einer rudimentären, schwer navigierbaren Benutzeroberfläche führten. In Anerkennung der Bedeutung der Benutzerfreundlichkeit bei modernen Geräten haben wir diese Schnittstelle mit Next.js als Framework neu konzipiert.
+
+Diese Migration zu Next.js ermöglicht ein fortschrittlicheres und benutzerfreundlicheres Interface-Design. Die Einstellungsseite verfügt nun über eine logische Kategorisierung der Optionen, was die Navigation für Benutzer intuitiver gestaltet. Wir haben eine umfassende clientseitige Eingabevalidierung implementiert, die nicht nur durch sofortiges Feedback die Benutzererfahrung verbessert, sondern auch die Verarbeitungslast des ESP32 reduziert, da eine aufwendige serverseitige Validierung entfällt.
+
+Die neue Oberfläche bietet ein reaktionsschnelleres und professionelleres Erlebnis, das besser mit aktuellen Webstandards harmoniert. Während bestimmte Funktionen wie das Gerätestatistik-Dashboard und die Live-Log-Ansicht noch in Entwicklung sind, bietet das Next.js-Framework eine solide Grundlage für diese kommenden Erweiterungen. Die modulare Struktur der neuen Architektur vereinfacht die Implementierung neuer Funktionen und die Wartung bestehender Funktionalität erheblich.
+
+Diese Modernisierung der Weboberfläche stellt eine deutliche Verbesserung der Benutzerinteraktion mit unserem Gerät dar. Die verbesserte Benutzerfreundlichkeit und das professionelle Erscheinungsbild schaffen einen überzeugenden ersten Eindruck, während die optimierte Architektur sicherstellt, dass wir die Schnittstelle kontinuierlich weiterentwickeln können. Obwohl einige geplante Funktionen noch in Entwicklung sind, zeigt die aktuelle Implementierung bereits erhebliche Verbesserungen in Benutzerfreundlichkeit und Wartbarkeit im Vergleich zur ursprünglichen Version.
