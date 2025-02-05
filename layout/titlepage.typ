@@ -34,33 +34,31 @@
 
   
   // --- Title Page ---
-  v(1cm)
+  v(5mm)
   align(center, image(logo_path, width: 26%))
 
-  v(5mm)
+  v(3mm)
   align(center, text(font: sans-font, 2em, weight: 700, university))
 
-  v(5mm)
+  v(1mm)
   align(center, text(font: sans-font, 1.5em, weight: 100, description))
   
-  v(15mm)
-
-  
+  v(20mm)
 
   align(center, text(font: sans-font, 2em, weight: 700, title))
-  
 
   align(center, text(font: sans-font, 2em, weight: 500, titleGerman))
 
   let entries = ()
-  entries.push(("Author: ", author))
-  entries.push(("Supervisor: ", supervisor))
+   v(45mm)
+  entries.push(("Autoren: ", author))
+  entries.push(("Betreuer: ", supervisor))
   // Only show advisors if there are any
   if advisors.len() > 0 {
     entries.push(("Advisors: ", advisors.join(", ")))
   }
-  entries.push(("Start Date: ", startDate.display("[day].[month].[year]")))
-  entries.push(("Submission Date: ", submissionDate.display("[day].[month].[year]")))
+  entries.push(("Startdatum: ", startDate.display("[day].[month].[year]")))
+  entries.push(("Einreichungsdatum: ", submissionDate.display("[day].[month].[year]")))
 
   v(1cm)
   align(
