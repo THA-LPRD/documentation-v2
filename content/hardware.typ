@@ -1,1 +1,6 @@
 == Hardware
+
+=== Neues ePaper Display
+_Mario Wegmann_
+
+Einer der Hauptprobleme mit dem bisherigen 7,3 Zoll ePaper Display von WaveShare war der langsame Full Refresh von 16 Sekunden. Bereits bei der Recherche nach passenden ePaper Display in Version 1 wurde ein weiteres 7,5 Zoll Display von dem Hersteller GoodDisplay gefunden. Dieses Display unterstützt die drei Farben Schwarz, Weiß und Rot und hat die gleiche Auflösung von 800 x 480 Pixel und wird auch über SPI angesprochen. Zusätzlich unterstützt das Display einen Partial Refresh Modus, in dem Änderungen von weißen und schwarzen Pixeln innerhalb von 1 Sekunde durchgeführt werden können, auch der Full Refresh dauert nur 11 Sekunden. Somit kann nicht nur die Wartezeit für den Benutzer verringert werden, sondern auch, bei kleinen Änderungen am Inhalt, dem Benutzer das Flackern beim Full Refresh erspart werden. In Version 1 wurde das Display jedoch nicht verwendet, da der Lieferprozess länger und komplizierter war, als beim WaveShare Display. Für Version 2 soll jedoch dieses Display verwendet und getestet werden. 
