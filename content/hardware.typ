@@ -1,4 +1,10 @@
 == Hardware
+
+=== Neues ePaper Display
+_Mario Wegmann_
+
+Einer der Hauptprobleme mit dem bisherigen 7,3 Zoll ePaper Display von WaveShare war der langsame Full Refresh von 16 Sekunden. Bereits bei der Recherche nach passenden ePaper Display in Version 1 wurde ein weiteres 7,5 Zoll Display von dem Hersteller GoodDisplay gefunden. Dieses Display unterstützt die drei Farben Schwarz, Weiß und Rot und hat die gleiche Auflösung von 800 x 480 Pixel und wird auch über SPI angesprochen. Zusätzlich unterstützt das Display einen Partial Refresh Modus, in dem Änderungen von weißen und schwarzen Pixeln innerhalb von 1 Sekunde durchgeführt werden können, auch der Full Refresh dauert nur 11 Sekunden. Somit kann nicht nur die Wartezeit für den Benutzer verringert werden, sondern auch, bei kleinen Änderungen am Inhalt, dem Benutzer das Flackern beim Full Refresh erspart werden. In Version 1 wurde das Display jedoch nicht verwendet, da der Lieferprozess länger und komplizierter war, als beim WaveShare Display. Für Version 2 soll jedoch dieses Display verwendet und getestet werden. 
+
 === Weiterentwicklungen im PCB-Layout
 _Benjamin Klarić_
 
@@ -140,3 +146,37 @@ Die 3D-Ansicht des Daughterboards ist in @fig:daughterboard zu sehen.
 )<fig:daughterboard>
 
 #pagebreak()
+#pagebreak()
+
+=== Projektübersicht
+_Benjamin Klarić_
+
+*NICHT AKTUELL FÜR PERSON 1, 3, 4*
+#figure(
+  table(
+    columns: (auto, auto),
+    inset: 10pt,
+    align: horizon,
+    table.header( [*Name*], [*Geleistete Stunden*]),
+    [Ahmet Emirhan Göktaş], [220 h],
+    [Benjamin Klarić], [168 h],
+    [Jannis Gröger], [101 h],
+    [Mario Wegmann], [136 h]
+  ), caption: [Geleistete Stunden pro Person]
+)<tab:stunden>
+
+
+#figure(
+  table(
+    columns: (auto, auto, auto),
+    inset: 10pt,
+    align: horizon,
+    table.header( [*Name*], [*Geleistete Stunden*], [*Direction*]),
+    [clk], [std_logic], [in],
+    [rst_n], [std_logic], [in],
+    [rxd_async_i], [std_logic], [in],
+    [can_frame_o], [can_core_out_intf_t], [out],
+    [can_frame_valid_o], [std_logic], [out],
+    [baud_config_i], [baud_intf_t], [in]
+  ), caption: [CAN Core entity]
+)<tab:budget>
