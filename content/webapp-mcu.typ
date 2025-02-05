@@ -1,14 +1,14 @@
-== Webapplication auf MCU
+== Webapplikation auf Displaymodul
 
 === Upload von Bildern
 _Mario Wegmann_
 
-Der Upload an das Displaymodul wurde an das neue Design angepasst und auch in Next.js in TypeScript komplett neu geschrieben. Dabei wurden die verschieden Möglichkeiten für den Upload von Bildern visuell von einander getrennt, um die Übersichtlichkeit zu verbessern. Es ist, wie in Version 1 auch schon, weiterhin möglich ein fertiges PNG hoch zu laden, ein PNG aus HTML Code, oder mit vorhanden HTML Vorlagen, zu erstellen. Die letzen beiden Varianten bieten beim bearbeiten des HTML Codes eine Live-Vorschau des Ergebnisses. 
+Der Upload an das Displaymodul wurde an das neue Design angepasst und auch in Next.js in TypeScript komplett neu geschrieben. Dabei wurden die verschiedenen Möglichkeiten für den Upload von Bildern visuell voneinander getrennt, um die Übersichtlichkeit zu verbessern. Es ist, wie in Version 1 auch schon, weiterhin möglich, ein fertiges PNG hochzuladen, ein PNG aus HTML-Code oder mit vorhandenen HTML-Vorlagen zu erstellen. Die letzten beiden Varianten bieten beim Bearbeiten des HTML-Codes eine Live-Vorschau des Ergebnisses. 
 
 === Server Modus
 _Mario Wegmann_
 
-Da der Servermodus eine Server URL benötigt wurde in der Konfigurationsseite die Eingabemaske um den Parameter erweitert. 
+Da der Servermodus eine Server-URL benötigt, wurde in der Konfigurationsseite die Eingabemaske um den Parameter erweitert. 
 
 === Display Konfiguration
 _Mario Wegmann_
