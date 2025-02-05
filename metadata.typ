@@ -8,7 +8,7 @@
 #let author = "Ahmet Emirhan Göktaş, Benjamin Klarić,
 Jannis Gröger, Mario Wegmann"
 #let university = "Technische Hochschule Augsburg"
-#let description = "FWP Titel"
+#let description = "Hochschul Innovationsprojekt WiSe 2024/25"
 #let logo_path = "/figures/tha.jpg"
 #let bib_path = "/thesis.bib"
 #let birthdate = datetime(day: 01, month: 01, year: 2002)

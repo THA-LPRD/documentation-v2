@@ -42,7 +42,7 @@
 
   // Set the document's basic properties.
   set page(
-    margin: (left: 30mm, right: 30mm, top: 40mm, bottom: 40mm),
+    margin: (left: 25mm, right: 25mm, top: 25mm, bottom: 20mm),
     numbering: "1",
     number-align: center,
   )

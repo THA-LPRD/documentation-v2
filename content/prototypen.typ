@@ -36,9 +36,8 @@ Um die Bestandteile des Gehäuses und Hülle der Akkupacks zu fertigen wurden 3D
 \
 Zum Schluss wurden die einzelnen Bestandteile des Geräts verschraubt, per Kabel verbunden und so insgesamt fünf Prototypen hergestellt, @version2 zeigt einen davon. 
 
-#TODO([richtiges Bild einfügen])
 
 #figure(
-  image("../figures/3ddruck.jpg"),
+  image("../figures/version2.jpg"),
   caption:[Prototyp der Version 2.]
 )<version2>

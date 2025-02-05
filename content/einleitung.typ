@@ -7,9 +7,11 @@ Das Low Power Raum Display in der Version 1, wie es in @version1 zu sehen ist, w
 \
 #figure(
   image("../figures/version1.png", width: 70%),
-  caption:[Version 1 des Low Power Raum Displays. Für genauere Informationen zu Version 1 kann die Website zum Projekt #show link: underline 
-#link("https://tha-lprd.github.io/Docs/v.1.0.0/")[hier] besucht werden.
+  caption:[Version 1 des Low Power Raum Displays. 
 ]
 )<version1>
+
+Für genauere Informationen zu Version 1 kann die Website zum Projekt #show link: underline 
+#link("https://tha-lprd.github.io/Docs/v.1.0.0/")[hier] besucht werden.
 
 = Änderungen in Version 2
