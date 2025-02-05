@@ -21,6 +21,8 @@ Die höhere Anzahl an GPIO-Pins ermöglicht die Integration des bereits erwähnt
 
 Der Adafruit ESP32-S3 Feather Mikrocontroller nutzt den MAX17048-Chip, um die Akkuspannung und den Ladezustand (State of Charge) aktiv zu überwachen. Der Battery-Monitoring-Chip verwendet den ModelGauge-Algorithmus, der durch die interne Architektur des Chips in der Lage ist, das nichtlineare dynamische Verhalten des Akkus zu berücksichtigen. Dabei werden auch die Impedanz sowie die langsame Reaktionsgeschwindigkeit der chemischen Prozesse im Akku einbezogen. Dies ermöglicht es dem MAX17048-Chip, die Akkuspannung und den Ladezustand zuverlässig und fehlerfrei zu erfassen. Mit einem äußerst niedrigen Stromverbrauch von 23 µA im aktiven Modus und nur 3 µA im Hibernation-Modus ist der Chip ideal für Low-Power-Anwendungen geeignet @max2016.
 
+Der Stromverbrauch des neuen Moduls bleibt weiterhin in einem sehr niedrigen Bereich - zwischen 100 mA und 160 mA im aktiven Modus und zwischen 21 µA und 25 µA im Deep-Sleep-Modus. Geht man von einem durchschnittlichen Verbrauch von 130 mA im aktiven Modus (was in der Praxis für die meiste Zeit zutrifft) und 23 µA im Deep-Sleep-Modus aus, sowie von einer Wachzeit von 7,5 Minuten - wie in Version 1 -, ergibt sich theoretisch eine Akkulaufzeit von etwa 15-16 Monaten. Dies wäre eine Verbesserung gegenüber Version 1, die eine Laufzeit von etwas mehr als einem Jahr erreichte.
+
 ==== Mainboard
 _Benjamin Klarić_
 
@@ -58,13 +60,11 @@ Die MikroSD-Adapter-Schaltung ist eine neue Erweiterung gegenüber Version 1. Si
 
 Der microSD-Adapter verfügt über eine modulare Funktionalität, die einen Wechsel zwischen zwei Modi ermöglicht. Das Design wurde überarbeitet, um den Wechsel von der 4-Draht-Verbindung (SD-Modus) zur 1-Draht-Verbindung (SPI-Modus) zu ermöglichen, falls mehr GPIO-Pins für andere Zwecke benötigt werden.
 
-Die Pull-ups werden im SD-Modus für die Datenleitungen und die Kommandoleitung benötigt @espressif2024. Der Pull-up-Widerstand am CD-Pin (Card Detect) verhindert, dass die Leitung im undefinierten Zustand (Floating) bleibt, und sorgt stattdessen für ein stabiles Signal.
+Die Pull-ups werden im SD-Modus für die Datenleitungen und die Kommandoleitung benötigt @espressif2024. Der Pull-up-Widerstand am CD-Pin (Card Detect) verhindert, dass die Leitung im undefinierten Zustand (Floating) bleibt, und sorgt stattdessen für ein stabiles Signal. Wenn die SD-Karte eingesteckt ist, wird dieser mechanische Schalter mit Ground verbunden. Daher ist es sinnvoll, einen Pull-Up-Widerstand zu verwenden.
 
 Der Entkopplungskondensator (100 nF) filtert hochfrequentes Rauschen aus der Stromversorgung heraus und dient als lokale Energiequelle für kurze Stromspitzen. Der Bulk-Kondensator (10 µF) funktioniert als größerer Energiespeicher zur Dämpfung niederfrequenter Spannungsschwankungen und stabilisiert die Versorgungsspannung bei längeren Lastwechseln.
 
 Die Kombination beider Kondensatortypen ist effektiv, da der Entkopplungskondensator schnell auf hochfrequente Störungen reagiert, während der Bulk-Kondensator für die längerfristige Spannungsstabilität sorgt. Sie ergänzen sich in ihren jeweiligen Frequenzbereichen und decken dadurch ein breites Frequenzspektrum ab.
-
-Die Diode auf der $V_"CC"$ -Leitung ist eine Schottky-Diode. Sie bietet zusätzlichen Schutz vor möglichen Spannungsspitzen. Aufgrund ihres geringen Spannungsabfalls (0,2-0,3 V) hat sie keine nennenswerten Auswirkungen auf den Betrieb. Zusätzlich gibt es eine Isolationsschicht, die einen potenziellen Rückfluss durch die internen Schutzdioden der Karte verhindert.
 
 Die Widerstände sind mit der $"SD_"V_"CC"$-Leitung verbunden. Dies ist besonders wichtig, da eine direkte Verbindung zur $V_"CC"$-Leitung des Mikrocontrollers eine parasitäre Rückkopplung ins System verursacht wurde.
 
