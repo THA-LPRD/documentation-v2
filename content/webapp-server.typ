@@ -28,5 +28,8 @@ _Mario Wegmann_
 
 Bereits in Version 1 wurde eine Möglichkeit gefunden die WebUntis Daten der THA auszulesen. Mithilfe der Node-Library [webuntis](https://www.npmjs.com/package/webuntis) können die WebUntis Daten programatisch ausgelesen werden. Der WebUntis Worker kann dabei alle Räume abfragen, die in WebUntis vorhanden sind und für einen spezifischen Raum den Wochenplan abfragen. Die Daten werden aufbereitet und in der PostgreSQL Datenbank der Hauptanwendung abgespeichert. 
 
+=== Betrieb auf Linux Server
+_Mario Wegmann_
 
+Bereits für Version 1 wurde vom Rechenzentrum eine Virtuelle Maschine zum Testen der Webapplication bereitgestellt. Diese VM wurde nun für Version 2 mit den neusten Updates versorgt und die neuste Version der Webapplication installiert und produktiv geschalten. 
 
