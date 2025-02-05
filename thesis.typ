@@ -37,6 +37,7 @@
 #include "content/webapp-server.typ"
 #include "content/gehaeuse.typ"
 #include "content/prototypen.typ"
+#include "content/tabellen.typ"
 #pagebreak()
 #include "content/bedienung.typ"
 #pagebreak()
