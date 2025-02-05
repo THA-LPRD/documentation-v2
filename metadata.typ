@@ -5,7 +5,8 @@
 #let program = "Technische Informatik"
 #let supervisor = "Prof. Dr.-Ing. Christoph Zeuke"
 #let advisors = ()
-#let author = "Ahmet Emirhan Göktaş, Benjamin Klarić, Jannis Gröger, Mario Wegmann"
+#let author = "Ahmet Emirhan Göktaş, Benjamin Klarić,
+Jannis Gröger, Mario Wegmann"
 #let university = "Technische Hochschule Augsburg"
 #let description = "FWP Titel"
 #let logo_path = "/figures/tha.jpg"
