@@ -29,7 +29,7 @@ Um die Bestandteile des Gehäuses und Hülle der Akkupacks zu fertigen wurden 3D
 
 \
 #figure(
-  image("../figures/3ddruck.jpg"),
+  image("../figures/3ddruck.jpg", width: 70%),
   caption:[Fertigen der Front und der Platinenhalterung auf einem Ultimaker S5.]
 )<3ddruck>
 
@@ -38,6 +38,8 @@ Zum Schluss wurden die einzelnen Bestandteile des Geräts verschraubt, per Kabel
 
 
 #figure(
-  image("../figures/version2.jpg"),
+  image("../figures/version2.jpg", width: 90%),
   caption:[Prototyp der Version 2.]
 )<version2>
+
+#pagebreak()

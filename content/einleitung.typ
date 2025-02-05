@@ -14,4 +14,6 @@ Das Low Power Raum Display in der Version 1, wie es in @version1 zu sehen ist, w
 Für genauere Informationen zu Version 1 kann die Website zum Projekt #show link: underline 
 #link("https://tha-lprd.github.io/Docs/v.1.0.0/")[hier] besucht werden.
 
+#pagebreak()
+
 = Änderungen in Version 2

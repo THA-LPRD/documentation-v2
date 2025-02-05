@@ -146,36 +146,3 @@ Die 3D-Ansicht des Daughterboards ist in @fig:daughterboard zu sehen.
 )<fig:daughterboard>
 
 #pagebreak()
-
-=== Projektübersicht
-_Benjamin Klarić_
-
-*NICHT AKTUELL FÜR PERSON 1, 3, 4*
-#figure(
-  table(
-    columns: (auto, auto),
-    inset: 10pt,
-    align: horizon,
-    table.header( [*Name*], [*Geleistete Stunden*]),
-    [Ahmet Emirhan Göktaş], [220 h],
-    [Benjamin Klarić], [168 h],
-    [Jannis Gröger], [101 h],
-    [Mario Wegmann], [136 h]
-  ), caption: [Geleistete Stunden pro Person]
-)<tab:stunden>
-
-
-#figure(
-  table(
-    columns: (auto, auto, auto),
-    inset: 10pt,
-    align: horizon,
-    table.header( [*Name*], [*Geleistete Stunden*], [*Direction*]),
-    [clk], [std_logic], [in],
-    [rst_n], [std_logic], [in],
-    [rxd_async_i], [std_logic], [in],
-    [can_frame_o], [can_core_out_intf_t], [out],
-    [can_frame_valid_o], [std_logic], [out],
-    [baud_config_i], [baud_intf_t], [in]
-  ), caption: [CAN Core entity]
-)<tab:budget>

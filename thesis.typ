@@ -37,11 +37,11 @@
 #include "content/webapp-server.typ"
 #include "content/gehaeuse.typ"
 #include "content/prototypen.typ"
-#pagebreak()
+#include "content/tabellen.typ"
 #include "content/bedienung.typ"
 #pagebreak()
 #set heading(numbering: none)
-#heading("Abbildungsverzeichniss")
+#heading("Abbildungsverzeichnis")
 #outline(
   title: none,
   target: figure.where(kind: image)
@@ -49,7 +49,7 @@
 #pagebreak()
 
 #set heading(numbering: none)
-#heading("Tabellenverzeichniss")
+#heading("Tabellenverzeichnis")
 #outline(
   title: none,
   target: figure.where(kind: table)

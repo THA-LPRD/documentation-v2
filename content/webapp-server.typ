@@ -23,10 +23,11 @@ Neben der eigentlichen Webapplikation wurden zusätzliche Worker Skripte erstell
 === WebUntis Anbindung
 _Mario Wegmann_
 
-Bereits in Version 1 wurde eine Möglichkeit gefunden, die WebUntis Daten der THA auszulesen. Mithilfe der Node-Library [webuntis](https://www.npmjs.com/package/webuntis) können die WebUntis Daten programmatisch ausgelesen werden. Der WebUntis Worker kann dabei alle Räume abfragen, die in WebUntis vorhanden sind, und für einen spezifischen Raum den Wochenplan abfragen. Die Daten werden aufbereitet und in der PostgreSQL-Datenbank der Hauptanwendung abgespeichert. 
+Bereits in Version 1 wurde eine Möglichkeit gefunden, die WebUntis Daten der THA auszulesen. Mithilfe der Node-Library #link("https://www.npmjs.com/package/webuntis")[webuntis] können die WebUntis Daten programmatisch ausgelesen werden. Der WebUntis Worker kann dabei alle Räume abfragen, die in WebUntis vorhanden sind, und für einen spezifischen Raum den Wochenplan abfragen. Die Daten werden aufbereitet und in der PostgreSQL-Datenbank der Hauptanwendung abgespeichert. 
 
 === Betrieb auf Linux Server
 _Mario Wegmann_
 
 Bereits für Version 1 wurde vom Rechenzentrum eine virtuelle Maschine zum Testen der Webapplikation bereitgestellt. Diese VM wurde nun für Version 2 mit den neuesten Updates versorgt und die neueste Version der Webapplikation installiert und produktiv geschaltet. 
 
+#pagebreak()

@@ -74,3 +74,5 @@ Um das Wechseln und Laden des Akkus deutlich benutzerfreundlicher zu gestalten, 
   image("../figures/akkupackzu.png",width: 70%),
   caption:[CAD-Modell eines geschlossenen Akkupacks.]
 )<akkupackzu>
+
+#pagebreak()

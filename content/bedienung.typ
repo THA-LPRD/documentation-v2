@@ -21,7 +21,7 @@ Nach Eingabe der IP-Adresse werden Sie zur Authentifizierung aufgefordert. Verwe
 _Ahmet Emirhan Göktaş_
 
 #figure(
-  image("../figures/MCU-Website-Home.png"),
+  image("../figures/MCU-Website-Home.png", width: 90%),
   caption: [Übersicht des Gerätestatus auf der Startseite]
 )
 
@@ -43,7 +43,7 @@ Sie haben drei Möglichkeiten, Bilder auf Ihrem Display anzuzeigen. Diese erreic
 _Ahmet Emirhan Göktaş_
 
 #figure(
-  image("../figures/MCU-Website-Upload-PNG.png"),
+  image("../figures/MCU-Website-Upload-PNG.png", width: 90%),
   caption: [Bereich für den PNG-Direktupload]
 )
 
@@ -55,18 +55,26 @@ So laden Sie eine PNG-Datei direkt hoch:
 ==== HTML zu PNG Konvertierung
 _Ahmet Emirhan Göktaş_
 
+Sie haben zwei Möglichkeiten, HTML-basierte Anzeigen zu erstellen:
+
+===== Eigener HTML-Code
+
 #figure(
-  image("../figures/MCU-Website-Upload-HTML2PNG.png"),
+  image("../figures/MCU-Website-Upload-HTML2PNG.png", width: 90%),
   caption: [HTML-Editor mit Vorschaufunktion]
 )
 
-Wenn Sie eine individuelle Anzeige mittels HTML erstellen möchten:
-1. Geben Sie Ihren HTML-Code in den Editor ein
-2. Überprüfen Sie das Ergebnis in der Vorschau
-3. Klicken Sie auf "Upload", um die Anzeige auf das Display zu übertragen
+1. Wählen Sie "HTML to PNG"
+2. Geben Sie Ihren HTML-Code in den Editor ein
+3. Überprüfen Sie das Ergebnis in der Vorschau
+4. Klicken Sie auf "Upload" zum Übertragen
 
-==== Template Editor
-[Platzhalter - Dokumentation folgt]
+===== Vorgefertigte Templates
+
+1. Wählen Sie "Template Editor"
+2. Wählen Sie eine Vorlage aus der Liste
+3. Passen Sie die Inhalte nach Bedarf an
+4. Bestätigen Sie mit "Upload"
 
 === Konfigurationsmöglichkeiten
 _Ahmet Emirhan Göktaş_
@@ -77,7 +85,7 @@ Die Einstellungen gliedern sich in drei Bereiche:
 _Ahmet Emirhan Göktaş_
 
 #figure(
-  image("../figures/MCU-Website-Settings-DeviceConf.png"),
+  image("../figures/MCU-Website-Settings-DeviceConf.png", width: 90%),
   caption: [Einstellungen für den Betriebsmodus]
 )
 
@@ -94,7 +102,7 @@ Im Bereich "Device Configuration" können Sie:
 _Ahmet Emirhan Göktaş_
 
 #figure(
-  image("../figures/MCU-Website-Settings-HTTP.png"),
+  image("../figures/MCU-Website-Settings-HTTP.png", width: 90%),
   caption: [Konfiguration der HTTP-Server-Parameter]
 )
 
@@ -110,7 +118,7 @@ Hier können Sie folgende Parameter anpassen:
 _Ahmet Emirhan Göktaş_
 
 #figure(
-  image("../figures/MCU-Website-Settings-Advanced.png"),
+  image("../figures/MCU-Website-Settings-Advanced.png", width: 90%),
   caption: [Erweiterte Systemeinstellungen]
 )
 

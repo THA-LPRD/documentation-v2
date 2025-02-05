@@ -57,3 +57,5 @@ Die modulare Struktur der Next.js-basierten Architektur bietet mehrere Vorteile:
 - Solide Grundlage für zukünftige Erweiterungen
 
 Die Modernisierung unserer Weboberfläche stellt einen bedeutenden Fortschritt in der Benutzerinteraktion mit dem Gerät dar, mit einer verbesserten Architektur, die eine kontinuierliche Weiterentwicklung zur Erfüllung zukünftiger Anforderungen gewährleistet und dabei hohe Standards für Benutzerfreundlichkeit und Wartbarkeit aufrechterhält.
+
+#pagebreak()
